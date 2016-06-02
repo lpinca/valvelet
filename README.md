@@ -8,7 +8,7 @@ This is a small utility to limit the execution rate of a function. It is useful
 for scenarios such as REST APIs consumption where the amount of requests per
 unit of time should not exceed a given threshold.
 
-This module is very similar to [`node-function-rate-limit`](function-rate-limit).
+This module is very similar to [`node-function-rate-limit`][function-rate-limit].
 The difference is that `valvelet` works seamlessly with promise-returning
 functions.
 
