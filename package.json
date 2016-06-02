@@ -1,0 +1,34 @@
+{
+  "name": "valvelet",
+  "version": "0.0.0",
+  "description": "Limit the execution rate of a function",
+  "homepage": "https://github.com/lpinca/valvelet",
+  "bugs": "https://github.com/lpinca/valvelet/issues",
+  "repository": "lpinca/valvelet",
+  "author": "Luigi Pinca",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "function",
+    "throttle",
+    "promise",
+    "limit",
+    "rate"
+  ],
+  "scripts": {
+    "test-travis": "istanbul cover tape --report lcovonly -- test.js",
+    "coverage": "istanbul cover tape -- test.js",
+    "test": "tape test.js"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "istanbul": "0.4.x",
+    "pre-commit": "1.1.x",
+    "tape": "4.5.x"
+  }
+}
