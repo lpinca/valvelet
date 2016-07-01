@@ -71,7 +71,12 @@ for (let i = 0; i < 10; i++) {
 
 ## Disclaimers
 
-This module is not a complete solution if you are trying throttle your requests to a remote API, but have multiple Node.js processes or on the same or multiple hosts, since the state is not shared between between the services.   That case can be addressed by allowing each process to send up to only a fraction of the total limit. Ex: If you have 4 processes, let each process send up to $limit/4.
+This module is not a complete solution if you are trying to throttle 
+your requests to a remote API, but have multiple Node.js processes or
+on the same or multiple hosts, since the state is not shared between
+the services. That case can be addressed by allowing each process
+to send up to only a fraction of the total limit. 
+Ex: If you have 4 processes, let each process send up to $limit/4.
 
 ## License
 
