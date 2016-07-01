@@ -16,8 +16,8 @@
     "rate"
   ],
   "scripts": {
-    "test-travis": "istanbul cover tape --report lcovonly -- test.js",
-    "coverage": "istanbul cover tape -- test.js",
+    "test-travis": "istanbul cover -x test.js tape --report lcovonly -- test.js",
+    "coverage": "istanbul cover -x test.js tape -- test.js",
     "test": "tape test.js"
   },
   "engines": {
