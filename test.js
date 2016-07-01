@@ -20,11 +20,27 @@ test('returns a function that returns a promise', (t) => {
 
 test('calls the original function with the same context and arguments', (t) => {
   const limit = valvelet(function () {
-    t.deepEqual(Array.prototype.slice.call(arguments), [1, 2]);
+    t.deepEqual(arguments, (function () { return arguments; })(1, 2));
     t.equal(this, 'foo');
   }, 1, 10);
 
   limit.call('foo', 1, 2).then(t.end);
+});
+
+test('allows to limit the queue size', (t) => {
+  const limit = valvelet(() => {}, 1, 10, 2);
+
+  limit();
+  limit();
+  limit();
+  limit().then(() => {
+    t.fail('Promise should not be fulfilled');
+    t.end();
+  }, (err) => {
+    t.equal(err instanceof Error, true);
+    t.equal(err.message, 'Queue is full');
+    t.end();
+  });
 });
 
 test('limits the execution rate of the original function', (t) => {

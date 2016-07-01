@@ -22,16 +22,21 @@ npm install --save valvelet
 
 The module exports a single function that takes three arguments.
 
-### valvelet(fn, limit, interval)
+### valvelet(fn, limit, interval[, size])
 
 Returns a function which should be called instead of `fn`. The function returned
 by `valvelet` returns a promise which resolves to the value returned by `fn`.
 
 **Arguments**
 
-- `fn` - The function to rate limit calls to
-- `limit` - The maximum number of allowed calls per `interval`
-- `interval` - The timespan where `limit` is calculated
+- `fn` - The function to rate limit calls to.
+- `limit` - The maximum number of allowed calls per `interval`.
+- `interval` - The timespan where `limit` is calculated.
+- `size` - The maximum size of the internal queue. Defaults to 2^32 - 1 which is
+  the maximum array size in JavaScript.
+
+When the internal queue is at capacity, the function returned by valvelet
+returns a promise that is rejected.
 
 **Example**
 
