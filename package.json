@@ -1,6 +1,6 @@
 {
   "name": "valvelet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Limit the execution rate of a function",
   "homepage": "https://github.com/lpinca/valvelet",
   "bugs": "https://github.com/lpinca/valvelet/issues",
