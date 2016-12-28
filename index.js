@@ -23,9 +23,9 @@ function valvelet(fn, limit, interval, size) {
 
   function shift() {
     count++;
-    setTimeout(timeout, interval);
     const data = queue.shift();
     data[2](fn.apply(data[0], data[1]));
+    setTimeout(timeout, interval);
   }
 
   return function limiter() {
