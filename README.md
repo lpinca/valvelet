@@ -87,7 +87,7 @@ send up to $limit/4.
 [npm-valvelet-badge]: https://img.shields.io/npm/v/valvelet.svg
 [npm-valvelet]: https://www.npmjs.com/package/valvelet
 [travis-valvelet-badge]: https://img.shields.io/travis/lpinca/valvelet/master.svg
-[travis-valvelet]: https://travis-ci.org/lpinca/valvelet
+[travis-valvelet]: https://travis-ci.com/lpinca/valvelet
 [coverage-valvelet-badge]: https://img.shields.io/coveralls/lpinca/valvelet/master.svg
 [coverage-valvelet]: https://coveralls.io/r/lpinca/valvelet?branch=master
 [function-rate-limit]: https://github.com/wankdanker/node-function-rate-limit
