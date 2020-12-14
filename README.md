@@ -1,16 +1,16 @@
 # valvelet
 
 [![Version npm][npm-valvelet-badge]][npm-valvelet]
-[![Build Status][travis-valvelet-badge]][travis-valvelet]
+[![Build Status][ci-valvelet-badge]][ci-valvelet]
 [![Coverage Status][coverage-valvelet-badge]][coverage-valvelet]
 
 This is a small utility to limit the execution rate of a function. It is useful
 for scenarios such as REST APIs consumption where the amount of requests per
 unit of time should not exceed a given threshold.
 
-This module is very similar to [`node-function-rate-limit`][function-rate-limit].
-The difference is that `valvelet` works seamlessly with promise-returning
-functions.
+This module is very similar to
+[`node-function-rate-limit`][function-rate-limit]. The difference is that
+`valvelet` works seamlessly with promise-returning functions.
 
 ## Install
 
@@ -45,9 +45,13 @@ promise is rejected.
 ```js
 const valvelet = require('valvelet');
 
-const get = valvelet(function request(i) {
-  return Promise.resolve(`${i} - ${new Date().toISOString()}`);
-}, 2, 1000);
+const get = valvelet(
+  function request(i) {
+    return Promise.resolve(`${i} - ${new Date().toISOString()}`);
+  },
+  2,
+  1000
+);
 
 function log(data) {
   console.log(data);
@@ -74,11 +78,10 @@ for (let i = 0; i < 10; i++) {
 ## Disclaimers
 
 This module is not a complete solution if you are trying to throttle your
-requests to a remote API, but have multiple Node.js processes on the same
-or multiple hosts, since the state is not shared between the services.
-That case can be addressed by allowing each process to send up to only a
-fraction of the total limit. Ex: If you have 4 processes, let each process
-send up to $limit/4.
+requests to a remote API, but have multiple Node.js processes on the same or
+multiple hosts, since the state is not shared between the services. That case
+can be addressed by allowing each process to send up to only a fraction of the
+total limit. Ex: If you have 4 processes, let each process send up to $limit/4.
 
 ## License
 
@@ -86,8 +89,11 @@ send up to $limit/4.
 
 [npm-valvelet-badge]: https://img.shields.io/npm/v/valvelet.svg
 [npm-valvelet]: https://www.npmjs.com/package/valvelet
-[travis-valvelet-badge]: https://img.shields.io/travis/lpinca/valvelet/master.svg
-[travis-valvelet]: https://travis-ci.com/lpinca/valvelet
-[coverage-valvelet-badge]: https://img.shields.io/coveralls/lpinca/valvelet/master.svg
+[ci-valvelet-badge]:
+  https://img.shields.io/github/workflow/status/lpinca/valvelet/CI/master?label=CI
+[ci-valvelet]:
+  https://github.com/lpinca/valvelet/actions?query=workflow%3ACI+branch%3Amaster
+[coverage-valvelet-badge]:
+  https://img.shields.io/coveralls/lpinca/valvelet/master.svg
 [coverage-valvelet]: https://coveralls.io/r/lpinca/valvelet?branch=master
 [function-rate-limit]: https://github.com/wankdanker/node-function-rate-limit
