@@ -90,7 +90,7 @@ total limit. Ex: If you have 4 processes, let each process send up to $limit/4.
 [npm-valvelet-badge]: https://img.shields.io/npm/v/valvelet.svg
 [npm-valvelet]: https://www.npmjs.com/package/valvelet
 [ci-valvelet-badge]:
-  https://img.shields.io/github/workflow/status/lpinca/valvelet/CI/master?label=CI
+  https://img.shields.io/github/actions/workflow/status/lpinca/valvelet/ci.yml?branch=master&label=CI
 [ci-valvelet]:
   https://github.com/lpinca/valvelet/actions?query=workflow%3ACI+branch%3Amaster
 [coverage-valvelet-badge]:
